@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGx </title>
+    <style>
+        img{
+           width: 10%;
+           height: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-testid="slackUserName">Kingie</h1>
+    <img src="kingedp.jpg" alt="Obafunbi" data-testid="slackDisplayImage">
+
+    <h2><span data-testid="currentDayOfTheWeek"></span></h2>
+
+    <h1><span data-testid="currentUTCTime"></span></h1>
+
+    <span data-testid="myTrack">Frontend</span>
+    <br>
+    <a href="https://github.com/Kingie001/stage1" data-testid="githubURL">Click here to view the source code on Github</a>
+
+    <script>
+         //Get the currentdate
+         var currentDate = new Date();
+
+         //Create an array of days of the week 
+         var days = ['Sunday', 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+         //Get the element by its attribute
+         var dayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+
+         //set the content of the element to the current day of the week
+         dayElement.textContent=days[currentDate.getDay()];
+
+         //Get the current UTC time in milliseconds
+         var currentTime = Date.now();
+
+         //Get the element by its data-testid attribute
+         var timeElement=document.querySelector('[data-testid="currentUTCTime"]');
+
+         //Set the content of the element to the current UTC time
+         timeElement.textContent=currentTime;
+    </script>
+</body>
+</html>
